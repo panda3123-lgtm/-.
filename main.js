@@ -178,7 +178,7 @@ break;
 
 case "endTurn":
 
-endTurn();
+nextTurn();
 
 break;
 
@@ -439,38 +439,10 @@ gameData.deck.length;
 // =================================
 
 
-function endTurn(){
-
-
-gameData.cost +=2;
 
 
 
-if(
-gameData.cost>10
-){
 
-gameData.cost=10;
-
-}
-
-
-
-document
-.getElementById(
-"cost"
-)
-.textContent =
-gameData.cost;
-
-
-
-alert(
-"ターン終了"
-);
-
-
-}
 
 
 
