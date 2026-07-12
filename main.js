@@ -483,7 +483,65 @@ gameData.deck.length;
 
 
 
+// =================================
+// デッキ読み込み（ID方式）
+// =================================
 
+function loadDeck(){
+
+
+    let data =
+    localStorage.getItem(
+        "deck"
+    );
+
+
+
+    if(!data){
+
+        return false;
+
+    }
+
+
+
+    let deckID =
+    JSON.parse(
+        data
+    );
+
+
+
+    gameData.deck =
+    deckID
+    .map(
+        id =>
+        cards.find(
+            card =>
+            card.id === id
+        )
+    )
+    .filter(
+        card =>
+        card !== undefined
+    );
+
+
+
+    updateDeck();
+
+
+
+    console.log(
+        "デッキを読み込みました"
+    );
+
+
+
+    return true;
+
+
+}
 
 
 
