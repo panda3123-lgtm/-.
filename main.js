@@ -5,26 +5,15 @@
 
 let gameData = {
 
+    player:null,
 
-    LP:8000,
-
-
-    enemyLP:8000,
-
-
-    cost:1,
-
+    enemy:null,
 
     deck:[],
 
-
-    hand:[],
-
-
-    grave:[]
-
-
 };
+
+
 
 
 
