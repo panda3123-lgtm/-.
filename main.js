@@ -496,18 +496,38 @@ gameData.deck.length;
 // =================================
 
 
+// =================================
+// デッキ保存（ID方式）
+// =================================
+
 function saveDeck(){
 
 
-localStorage.setItem(
+    let deckID = 
+    gameData.deck.map(
+        card => card.id
+    );
 
-"deck",
 
-JSON.stringify(
-gameData.deck
-)
 
-);
+    localStorage.setItem(
+
+        "deck",
+
+        JSON.stringify(
+            deckID
+        )
+
+    );
+
+
+
+    alert(
+        "デッキを保存しました"
+    );
+
+
+}
 
 
 
