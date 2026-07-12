@@ -21,6 +21,9 @@ let gameData = {
 
 let currentCard = null;
 
+let player1;
+let player2;
+
 
 
 
