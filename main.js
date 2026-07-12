@@ -220,10 +220,12 @@ break;
 
 case "endTurn":
 
-nextTurn();
+nextTurn();　
+
+        saveGame();
 
 break;
-
+        
 
 
 case "saveDeck":
@@ -715,7 +717,10 @@ function initializeGame(){
 
     saveGame();
 
+    console.log(
 
+        "新規ゲームを開始しました"
+        );
 }
 
 
@@ -752,6 +757,23 @@ function saveGame(){
 
     };
 
+
+        localStorage.setItem(
+
+        "battleSave",
+
+        JSON.stringify(
+            saveData
+        )
+
+    );
+
+
+    console.log(
+        "ゲームを保存しました"
+    );
+
+}
 
 
     localStorage.setItem(
@@ -795,7 +817,34 @@ function loadGame(){
 
     }
 
+    let data =
+    JSON.parse(
+        saveData
+    );
 
+
+    player1 =
+    data.player1;
+
+
+    player2 =
+    data.player2;
+
+
+    turnCount =
+    data.turn;
+
+
+
+    console.log(
+        "ゲームを復元しました"
+    );
+
+
+
+    return true;
+
+}
 
     let data =
     JSON.parse(saveData);
@@ -982,5 +1031,6 @@ showScreen(
 
 initializeGame();
 
+initializeGame();
 
 };
