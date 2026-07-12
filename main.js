@@ -471,6 +471,54 @@ alert(
 
 
 
+function initializeGame(){
+
+
+player1 =
+createPlayer(
+"Player1"
+);
+
+
+player2 =
+createPlayer(
+"Player2"
+);
+
+
+
+player1.deck =
+cards.slice();
+
+
+
+player2.deck =
+cards.slice();
+
+
+
+player1.deck =
+shuffle(
+player1.deck
+);
+
+
+player2.deck =
+shuffle(
+player2.deck
+);
+
+
+
+startGame(
+player1,
+player2
+);
+
+
+}
+
+
 
 
 // =================================
