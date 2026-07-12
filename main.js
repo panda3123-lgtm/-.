@@ -477,13 +477,15 @@ alert(
 // 起動処理
 // =================================
 
-
 window.onload=function(){
 
 
 showScreen(
 "titleScreen"
 );
+
+
+initializeGame();
 
 
 };
