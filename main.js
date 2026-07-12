@@ -569,6 +569,66 @@ player2
 }
 
 
+// =================================
+// ゲーム初期化
+// =================================
+
+function initializeGame(){
+
+
+    player1 =
+    createPlayer(
+        "Player1"
+    );
+
+
+    player2 =
+    createPlayer(
+        "Player2"
+    );
+
+
+
+    // カード一覧からデッキ作成
+
+    player1.deck =
+    cards.slice();
+
+
+    player2.deck =
+    cards.slice();
+
+
+
+    // シャッフル
+
+    player1.deck =
+    shuffle(
+        player1.deck
+    );
+
+
+    player2.deck =
+    shuffle(
+        player2.deck
+    );
+
+
+
+    // ゲーム開始
+
+    startGame(
+        player1,
+        player2
+    );
+
+
+}
+
+
+
+
+
 
 
 // =================================
