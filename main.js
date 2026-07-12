@@ -681,22 +681,40 @@ player2
 // ゲーム初期化
 // =================================
 
+// =================================
+// ゲーム初期化
+// =================================
+
 function initializeGame(){
 
-    let save =
-    localStorage.getItem("battleSave");
+
+    // 対戦データがある場合
+
+    if(
+        loadGame()
+    ){
+
+        console.log(
+            "保存データから復元しました"
+        );
 
 
-    if(save){
-
-        loadGame();
+        return;
 
     }
-    else{
 
-        createNewGame();
 
-    }
+
+    // 保存データがない場合
+
+    createNewGame();
+
+
+
+    // 初回保存
+
+    saveGame();
+
 
 }
 
