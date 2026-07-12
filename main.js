@@ -24,6 +24,56 @@ let currentCard = null;
 let player1;
 let player2;
 
+// =================================
+// プレイヤー作成
+// =================================
+
+function createPlayer(name){
+
+
+    return {
+
+        name:name,
+
+        lp:8000,
+
+        cost:0,
+
+        maxCost:0,
+
+
+        hand:[],
+
+
+        deck:[],
+
+
+        grave:[],
+
+
+        field:{
+
+
+            monsters:[],
+
+
+            cards:[],
+
+
+            traps:[]
+
+
+        },
+
+
+        phase:"none"
+
+
+    };
+
+
+}
+
 
 
 
