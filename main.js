@@ -605,7 +605,156 @@ function initializeGame(){
 
 }
 
+// =================================
+// ゲーム保存
+// =================================
 
+function saveGame(){
+
+
+    let saveData = {
+
+
+        player1: player1,
+
+
+        player2: player2,
+
+
+        turn: turnCount
+
+
+    };
+
+
+
+    localStorage.setItem(
+
+        "battleSave",
+
+        JSON.stringify(saveData)
+
+    );
+
+
+    console.log(
+        "ゲームを保存しました"
+    );
+
+
+}
+
+
+
+
+
+
+// =================================
+// ゲーム復元
+// =================================
+
+function loadGame(){
+
+
+    let saveData =
+    localStorage.getItem(
+        "battleSave"
+    );
+
+
+
+    if(!saveData){
+
+        return false;
+
+    }
+
+
+
+    let data =
+    JSON.parse(saveData);
+
+
+
+    player1 =
+    data.player1;
+
+
+    player2 =
+    data.player2;
+
+
+
+    turnCount =
+    data.turn;
+
+
+
+    console.log(
+        "ゲームを復元しました"
+    );
+
+
+
+    return true;
+
+
+}
+
+
+
+
+
+
+// =================================
+// 新規ゲーム作成
+// =================================
+
+function createNewGame(){
+
+
+    player1 =
+    createPlayer(
+        "Player1"
+    );
+
+
+    player2 =
+    createPlayer(
+        "Player2"
+    );
+
+
+
+    player1.deck =
+    cards.slice();
+
+
+    player2.deck =
+    cards.slice();
+
+
+
+    player1.deck =
+    shuffle(
+        player1.deck
+    );
+
+
+    player2.deck =
+    shuffle(
+        player2.deck
+    );
+
+
+
+    startGame(
+        player1,
+        player2
+    );
+
+
+}
 
 
 
