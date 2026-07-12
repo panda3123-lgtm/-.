@@ -515,10 +515,40 @@ alert(
 "保存しました"
 );
 
-
 }
 
+// =================================
+// デッキ保存（ID方式）
+// =================================
 
+function saveDeck(){
+
+
+    let deckID = 
+    gameData.deck.map(
+        card => card.id
+    );
+
+
+
+    localStorage.setItem(
+
+        "deck",
+
+        JSON.stringify(
+            deckID
+        )
+
+    );
+
+
+
+    alert(
+        "デッキを保存しました"
+    );
+
+
+}
 
 
 function initializeGame(){
@@ -676,12 +706,50 @@ function loadGame(){
 
 
 
-    player1 =
-    data.player1;
+player1 =
+data.player1;
 
 
-    player2 =
-    data.player2;
+player2 =
+data.player2;
+
+
+
+player1.deck =
+restoreCardList(
+player1.deck
+);
+
+
+player1.hand =
+restoreCardList(
+player1.hand
+);
+
+
+player1.grave =
+restoreCardList(
+player1.grave
+);
+
+
+
+player2.deck =
+restoreCardList(
+player2.deck
+);
+
+
+player2.hand =
+restoreCardList(
+player2.hand
+);
+
+
+player2.grave =
+restoreCardList(
+player2.grave
+);
 
 
 
@@ -756,9 +824,53 @@ function createNewGame(){
 
 }
 
+// =================================
+// カードIDからカード復元
+// =================================
+
+function restoreCard(cardData){
+
+
+    let original =
+    cards.find(
+        card =>
+        card.id === cardData.id
+    );
 
 
 
+    if(original){
+
+        return {
+            ...original
+        };
+
+    }
+
+
+
+    return null;
+
+}
+
+// =================================
+// カード配列復元
+// =================================
+
+function restoreCardList(list){
+
+
+    return list
+    .map(
+        card =>
+        restoreCard(card)
+    )
+    .filter(
+        card => card !== null
+    );
+
+
+}
 
 // =================================
 // 起動処理
