@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>カードゲーム</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div id="game">
+
+
+<!-- 背景暗転用 -->
+<div id="backgroundLayer"></div>
+
+
+
+<!-- ================= -->
+<!-- タイトル画面 -->
+<!-- ================= -->
+
+<section id="titleScreen" class="screen">
+
+
+<h1>
+CARD GAME
+</h1>
+
+
+<p>
+名称未定
+</p>
+
+
+
+<button data-action="start">
+対戦開始
+</button>
+
+
+<button data-action="deck">
+デッキ編集
+</button>
+
+
+<button data-action="cards">
+カード一覧
+</button>
+
+
+<button data-action="setting">
+設定
+</button>
+
+
+<button data-action="exit">
+終了
+</button>
+
+
+</section>
+
+
+
+
+
+<!-- ================= -->
+<!-- メインメニュー -->
+<!-- ================= -->
+
+<section id="menuScreen" class="screen hidden">
+
+
+<h1>
+メインメニュー
+</h1>
+
+
+
+<button data-action="battle">
+対戦する
+</button>
+
+
+<button data-action="deck">
+デッキ編集
+</button>
+
+
+<button data-action="cards">
+カード一覧
+</button>
+
+
+<button data-action="setting">
+設定
+</button>
+
+
+
+<button data-action="title">
+戻る
+</button>
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= -->
+<!-- カード一覧 -->
+<!-- ================= -->
+
+<section id="cardScreen" class="screen hidden">
+
+
+<h1>
+カード一覧
+</h1>
+
+
+<div id="cardList">
+
+</div>
+
+
+<button data-action="menu">
+戻る
+</button>
+
+
+</section>
+
+
+
+
+
+
+<!-- ================= -->
+<!-- カード詳細 -->
+<!-- ================= -->
+
+<section id="detailScreen" class="screen hidden">
+
+
+<img id="detailImage">
+
+
+<h2 id="detailName">
+
+</h2>
+
+
+<p id="detailCost">
+
+</p>
+
+
+<p id="detailAtk">
+
+</p>
+
+
+<p id="detailText">
+
+</p>
+
+
+<button data-action="addDeck">
+デッキに追加
+</button>
+
+
+<button data-action="cards">
+戻る
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= -->
+<!-- デッキ編集 -->
+<!-- ================= -->
+
+<section id="deckScreen" class="screen hidden">
+
+
+<h1>
+デッキ編集
+</h1>
+
+
+<p>
+デッキ名：
+<span id="deckName">
+未作成
+</span>
+
+</p>
+
+
+
+<p>
+枚数：
+
+<span id="deckCount">
+0
+</span>
+
+/60
+
+</p>
+
+
+
+<div id="deckList">
+
+</div>
+
+
+
+<button data-action="saveDeck">
+保存
+</button>
+
+
+
+<button data-action="menu">
+戻る
+</button>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ================= -->
+<!-- 対戦画面 -->
+<!-- ================= -->
+
+<section id="battleScreen" class="screen hidden">
+
+
+<div id="enemyArea">
+
+
+<p>
+相手LP
+
+<span id="enemyLP">
+8000
+</span>
+
+</p>
+
+
+<div id="enemyField">
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<div id="playerArea">
+
+
+<p>
+自分LP
+
+<span id="playerLP">
+8000
+</span>
+
+</p>
+
+
+
+<p>
+コスト
+
+<span id="cost">
+1
+</span>
+
+</p>
+
+
+
+<div id="playerField">
+
+</div>
+
+
+
+<div id="hand">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<button data-action="endTurn">
+ターン終了
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= -->
+<!-- 設定画面 -->
+<!-- ================= -->
+
+<section id="settingScreen" class="screen hidden">
+
+
+<h1>
+設定
+</h1>
+
+
+<label>
+
+音量
+
+<input type="range">
+
+</label>
+
+
+
+<label>
+
+操作設定
+
+<select>
+
+<option>
+マウス操作
+</option>
+
+<option>
+タッチ操作
+</option>
+
+</select>
+
+
+</label>
+
+
+
+<button data-action="menu">
+戻る
+</button>
+
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script src="cards.js"></script>
+
+<script src="main.js"></script>
+
+
+</body>
+
+</html>
